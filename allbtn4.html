@@ -66,17 +66,23 @@
     </button>
     <script>
         // 토글기능 원리
-        let status = true;
+        // let status = true;
 
-        document.getElementById("animationAllbtn").addEventListener('click', function(){
-            if(status){
-            document.getElementById("animationAllbtn").classList.add('show');
-            status = false;
-            }else{
-            document.getElementById("animationAllbtn").classList.remove('show');
-            status = true;
-            }
-        })
+        // document.getElementById("animationAllbtn").addEventListener('click', function(){
+        //     if(status){
+        //     document.getElementById("animationAllbtn").classList.add('show');
+        //     status = false;
+        //     }else{
+        //     document.getElementById("animationAllbtn").classList.remove('show');
+        //     status = true;
+        //     }
+        // })
+
+        // 토글기능 최적화
+        const btn = document.getElementById("animationAllbtn");
+            btn.addEventListener("click", () => {
+            btn.classList.toggle("show");
+        });
 
     </script>
 </body>
