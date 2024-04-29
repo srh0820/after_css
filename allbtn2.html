@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Position absolute / click 이벤트 / transform </title>
+    <style>
+        #animationAllbtn{
+            position: absolute;
+            border: 0;
+            width: 2.8rem;  /* 1rem = 16 */
+            height: 1.5rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% -50%);
+            /*  = margin-left: -1.4rem;  
+                내 크기 너비의 절반만큼 왼쪽으로 이동
+                이동 범위는 같지만 마진으로 쓰면 항상 수정해야하는 불편함이 있음 */
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        #animationAllbtn:before{
+            top: 0;
+        }
+        #animationAllbtn:before,
+        #animationAllbtn:after
+        {    /* 가상선택자 - inline 태그 . 띄어쓰기X */
+            content: "";    /* 중요한 컨텐츠 넣으면 안됨 */
+            display: block;
+            height: 3px;
+            background-color: black;
+            position: absolute; /* absolute 는 10% 미만으로 쓰는게 좋음, 웹표준 어긋날 수 있음 주의 */
+            left: 0;
+            width: 100%;
+        }
+        #animationAllbtn:after{
+            bottom: 0;
+        }
+        #animationAllbtn span{
+            display: block; /* block - 부모 너비 유전, width 100% */
+            height: 3px;
+            background-color: black;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button id="animationAllbtn">
+        <span></span>
+    </button>
+</body>
+</html>
