@@ -27,8 +27,17 @@
     <!-- bi-x-lg -->
     <script>
         const allBtn = document.getElementById("allBtn");
+        let status = true;  // let = 값이 바뀌는 변수. 처음 한번만 선언
         allBtn.addEventListener("click", function(){
-            allBtn.classList.toggle('bi-x-lg')
+            // allBtn.classList = 'bi bi-list fs-1 bi-x-lg'; 
+            // allBtn.classList += 'bi-x-lg';   추가대입식. 스피드가 빠름
+            if(status){
+                allBtn.classList = 'bi bi-list fs-1 bi-x-lg text-red'; // X 아이콘까지 있는 상태
+                status = false;  // status 가 false 의 값을 가지게 됨
+            }else{
+                allBtn.classList = 'bi bi-list fs-1 ';  // list 아이콘만 있는 상태
+                status = true;
+            }
         })
     </script>
 </body>
