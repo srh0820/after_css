@@ -1,0 +1,25 @@
+.img-fluid{
+    max-width: 100%;    /* width 값은 유전 받지 않음 */
+}
+#mainBanner{
+    background-image: url("../img/bg.png"); /* "../" 는 상위 디렉토리를 가리키는 경로 구분자 */
+    height: 100vw; /* 정사각형 */
+    max-height: 800px; /* 실제 너비 */
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: auto 100%; /* x축(너비) auto , y축(높이) 100% */
+    transition: 0.5s;
+    color: white;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mainBanner:hover{
+    background-size: auto 150%; /* 마우스 오버시 확대 */
+}
+@media (max-width:991px) { /* 미디어 쿼리 */
+    h2 span{
+        display: none; /* 화면이 991px 이하일 때 h2 에 있는 span 은 안나타나기 */
+    }
+}
